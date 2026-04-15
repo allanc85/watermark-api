@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "watermark-api"
+version = "0.1.0"
+description = "Small FastAPI service that adds text or image watermarks to uploaded photos using Pillow"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "SEN 合同会社" }
+]
+requires-python = ">=3.10"
+keywords = ["image", "watermark", "fastapi", "pillow", "api", "microservice"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Web Environment",
+    "Framework :: FastAPI",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Graphics",
+]
+dependencies = [
+    "fastapi>=0.110,<1.0",
+    "uvicorn>=0.27,<1.0",
+    "Pillow>=10.0,<12.0",
+    "python-multipart>=0.0.9,<1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "httpx>=0.27",
+]
+
+[project.urls]
+Homepage = "https://github.com/sen-ltd/watermark-api"
+Issues = "https://github.com/sen-ltd/watermark-api/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
