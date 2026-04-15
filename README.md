@@ -125,3 +125,9 @@ The test suite generates its JPEG/PNG/WebP fixtures in memory via Pillow. No bin
 ## License
 
 MIT. See [LICENSE](./LICENSE).
+
+<!-- sen-publish:links -->
+## Links
+
+- 📝 dev.to: https://dev.to/sendotltd/the-right-sized-image-service-a-fastapi-watermarker-in-110-mb-1f7l
+<!-- /sen-publish:links -->
