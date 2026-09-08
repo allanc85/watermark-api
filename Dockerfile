@@ -46,7 +46,9 @@ RUN apk add --no-cache \
         tiff \
         libwebp \
         freetype \
-        font-dejavu
+        font-dejavu \
+        fonts-liberation \
+        fontconfig
 
 COPY --from=builder /install /usr/local
 
