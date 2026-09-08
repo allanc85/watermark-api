@@ -31,6 +31,8 @@ VALID_POSITIONS = {
     "bottom-left",
     "bottom-right",
     "center",
+    "upper-mid-center",
+    "lower-mid-center",
 }
 
 # Ordered list of candidate TTF paths. The Dockerfile installs font-dejavu
@@ -39,6 +41,7 @@ VALID_POSITIONS = {
 # back to Pillow's embedded bitmap font (which ignores font size, but at
 # least lets unit tests run without any TTF installed).
 _FONT_CANDIDATES = (
+    "/usr/share/fonts/ttf-liberation/LiberationSerif-Regular.ttf",
     "/usr/share/fonts/TTF/DejaVuSans.ttf",
     "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
     "/Library/Fonts/Arial.ttf",
@@ -87,6 +90,10 @@ def _position_xy(
         return (cw - ow - padding, ch - oh - padding)
     if position == "center":
         return ((cw - ow) // 2, (ch - oh) // 2)
+    if position == "upper-mid-center":
+        return ((cw - ow) // 2, (ch - oh) // 4)
+    if position == "lower-mid-center":
+        return ((cw - ow) // 2, (ch - oh) // 4 * 3)
 
     raise ValueError(f"unknown position: {position!r}")
 
